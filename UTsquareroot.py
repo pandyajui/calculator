@@ -3,18 +3,18 @@ from Calculator import Calculator
 from CsvReader import CsvReader
 
 
-class SquareTestCase(unittest.TestCase):
+class SquareRootTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = Calculator()
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calculator, Calculator())
 
-    def test_square(self):
-        test_data = CsvReader('Unit Test Square.csv').data
+    def test_squareroot(self):
+        test_data = CsvReader('Unit Test Square Root.csv').data
         for row in test_data:
             result = float(row['Result'])
-            self.assertEqual(self.calculator.sq(row['Value 1']), result)
+            self.assertEqual(self.calculator.sqrt(row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
 
     def test_results_property(self):
