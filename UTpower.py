@@ -3,18 +3,18 @@ from Calculator import Calculator
 from CsvReader import CsvReader
 
 
-class MultiplyTestCase(unittest.TestCase):
+class PowerTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = Calculator()
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calculator, Calculator())
 
-    def test_multiply(self):
-        test_data = CsvReader('Unit Test Multiplication.csv').data
+    def test_power(self):
+        test_data = CsvReader('Unit Test Power.csv').data
         for row in test_data:
             result = float(row['Result'])
-            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), result)
+            self.assertEqual(self.calculator.pwr(row['Value 1'], row['Value 2']), result)
             self.assertEqual(self.calculator.result, result)
 
     def test_results_property(self):
