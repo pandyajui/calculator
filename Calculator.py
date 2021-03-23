@@ -1,5 +1,7 @@
 import math
 from CsvReader import CsvReader
+
+
 def addition(a, b):
     c = float(a) + float(b)
     return c
@@ -27,6 +29,11 @@ def square(a):
 
 def squareroot(a):
     c = float(math.sqrt(a))
+    return c
+
+
+def power(a, b):
+    c = float(math.pow(a, b))
     return c
 
 
@@ -60,6 +67,10 @@ class Calculator:
         self.result = squareroot(a)
         return self.result
 
+    def pwr(self, a, b):
+        self.result = power(a, b)
+        return self.result
+
 
 class CSVStats(Calculator):
     data = []
@@ -67,6 +78,3 @@ class CSVStats(Calculator):
     def __init__(self, data_file):
         self.data = CsvReader(data_file)
         pass
-
-
-
