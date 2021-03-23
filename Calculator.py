@@ -61,4 +61,12 @@ class Calculator:
         return self.result
 
 
+class CSVStats(Calculator):
+    data = []
+
+    def __init__(self, data_file):
+        self.data = CsvReader(data_file)
+        pass
+
+
 
